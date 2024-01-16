@@ -1,5 +1,6 @@
 # from covfee import Task, HIT
 from covfee import Project, HIT, Journey, tasks
+from covfee.shared.dataclass import CovfeeApp
 from covfee.config import config
 
 config.load_environment("local")
@@ -81,4 +82,6 @@ nodes = [
 j1 = linear.add_journey(nodes)
 
 project = Project("My Project", email="example@example.com", hits=[hit, linear])
-project.launch()
+
+app = CovfeeApp([project])
+app.launch()
