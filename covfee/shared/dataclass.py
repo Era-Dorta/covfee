@@ -127,6 +127,6 @@ class CovfeeApp(BaseDataclass):
 
     def launch(self, num_instances=1):
         orm_projects = self.get_instantiated_projects(num_instances)
-        l = launcher.Launcher("dev", orm_projects, folder=None)
+        l = launcher.Launcher("dev", orm_projects, folder="./")
         l.make_database()
         l.launch()
